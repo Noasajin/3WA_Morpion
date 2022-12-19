@@ -1,0 +1,28 @@
+*
+{
+    box-sizing: border-box;
+}
+
+html 
+{ 
+    font-size: 62.5%; 
+}
+
+.container {
+    width: 20%;
+    margin: auto;
+}
+
+.line {
+    display: flex;
+}
+
+.line div {
+    height: 10em;
+    outline: 1px solid black;
+    width: 80%;
+}
+
+button {
+    margin: 1em auto;
+}
