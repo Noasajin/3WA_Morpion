@@ -1,7 +1,19 @@
+///// TABLEAU DES POSSIBILITES
+
+
 const morpion = [[1, 2, 3], [4, 5, 6], [7, 8, 9],
                 [1, 4, 7], [2, 5, 8], [3, 6, 9],
                 [1, 5, 9], [3, 5, 7]]
+                
 
+///// CONDITIONS DE VICTOIRE
+function victory() {
+morpion.forEach(possibility => {
+    if (possibility[0] === possibility[1] && possibility[1] === possibility[2]) {
+        alert('Vous avez gagné');
+    }
+})
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     let caseOne = document.getElementById('1');
@@ -19,12 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
     turn = 0
     // turn.innerHTML = 'Tours :';
     
-    morpion.forEach(possibility => {
-        if (possibility[0] === possibility[1] && possibility[1] === possibility[2]) {
-            alert('Vous avez gagné');
-        }
-    })
     
+    ///// INTERAGIR AVEC 'X' et 'O'
     const allCases = (e) => {
         if (turn === 0) {
             e.innerHTML = `<p>╳</p>`;
@@ -33,12 +41,15 @@ document.addEventListener('DOMContentLoaded', () => {
             e.innerHTML = `<p>◯</p>`;
             turn--
         }
-    }  
+        
+    }
     
     cases.forEach(function(item){
         item.addEventListener("click", () => allCases(item))
     })
     
+    
+
     
     
 });
