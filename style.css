@@ -26,3 +26,7 @@ html
 button {
     margin: 1em auto;
 }
+
+p {
+    font-size: 5em;
+}
