@@ -14,7 +14,7 @@ morpion.forEach(possibility => {
     }
 })
 }
-
+a
 document.addEventListener('DOMContentLoaded', () => {
     let caseOne = document.getElementById('1');
     let caseTwo = document.getElementById('2');
