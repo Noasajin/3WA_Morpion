@@ -17,7 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
     
     let turn = document.getElementById('turn');
     turn = 0
-    turn.innerHTML = 'Tours :';
+    // turn.innerHTML = 'Tours :';
+    
+    morpion.forEach(possibility => {
+        if (possibility[0] === possibility[1] && possibility[1] === possibility[2]) {
+            alert('Vous avez gagné');
+        }
+    })
     
     const allCases = (e) => {
         if (turn === 0) {
@@ -32,5 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cases.forEach(function(item){
         item.addEventListener("click", () => allCases(item))
     })
+    
+    
     
 });
