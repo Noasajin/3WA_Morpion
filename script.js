@@ -13,19 +13,24 @@ document.addEventListener('DOMContentLoaded', () => {
     let caseSeven = document.getElementById('7');
     let caseEight = document.getElementById('8');
     let caseNine = document.getElementById('9');
+    const cases = [caseOne, caseTwo, caseThree, caseFour, caseFive, caseSix, caseSeven, caseEight, caseNine]
     
     let turn = document.getElementById('turn');
     turn = 0
     turn.innerHTML = 'Tours :';
     
-    caseOne.addEventListener("click", () => {
+    const allCases = (e) => {
         if (turn === 0) {
-            caseOne.innerHTML = `<p>X</p>`;
+            e.innerHTML = `<p>╳</p>`;
             turn++
         } else if (turn >= 1) {
-            caseOne.innerHTML = `<p>O</p>`;
+            e.innerHTML = `<p>◯</p>`;
             turn--
         }
+    }  
+    
+    cases.forEach(function(item){
+        item.addEventListener("click", () => allCases(item))
     })
     
 });
